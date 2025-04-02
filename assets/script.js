@@ -17,6 +17,24 @@ const slides = [
 	}
 ]
 
+let slideNmb = 0;
+
+for (let i = 0; i < slides.length; i++) {
+	let dots = document.querySelector('.dots');
+	let dot = document.createElement("div");
+	dot.className = "dot dotIndiv"+i;
+	if ( i === 0 ){dot.className = "dot " + "dotIndiv"+i + " dot_selected"}
+	dots.appendChild(dot);
+}
+
+let bannerImage = document.querySelector('.banner-img')
+let bannerText = document.querySelector('.banner-text')
+
+function ChangeSlide() {
+	bannerImage.src = './assets/images/slideshow/${slides[slideNmb].image';
+	bannerText.innerHTML = slides[slideIndex].tagLine;
+}
+
 let leftArrow = document.getElementById("arrow_left");
 	leftArrow.addEventListener("click", function () {
 		console.log("Vous avez cliquez sur la flèche de gauche")
